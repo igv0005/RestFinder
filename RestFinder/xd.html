@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    function submitForm() {
+      document.getElementById("inicio").style.display = "none";
+      document.getElementById("registro").style.display = "none";
+      var btn = document.createElement("BUTTON");
+      btn.innerHTML = "Sesión";
+      document.body.appendChild(btn);
+    }
+  </script>
+</head>
+<body>
+  <button id="submit" onclick="submitForm()">Submit</button>
+  <button id="inicio">Inicio</button>
+  <button id="registro">Registro</button>
+</body>
+</html>

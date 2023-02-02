@@ -10,11 +10,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-    
+
 </head>
-  
+
     <header class="header">
-      <?php session_start(); ?>
+
+      <?php session_start();
+      if (isset($_SESSION['username'])) {
+        echo '<script>submitForm();</script>';
+      }
+      ?>
+      
     <form>
 
         <!-- Desplegable -->
@@ -84,11 +90,39 @@
 
                   }
             }
+
+
+            function submitForm() {
+            
+      document.getElementById("inicio").style.display = "none";
+      document.getElementById("registro").style.display = "none";
+
+
+      var btn = document.createElement("BUTTON");
+      const iniciobtn = document.getElementById("inicio");
+
+      const registrobtn = document.getElementById("registro");
+
+  
+      var header = document.getElementsByTagName("header")[0];  
+   
+      btn.innerHTML = "Sesión";
+      header.appendChild(btn);
+      event.preventDefault();
+  }
+
+    function cerrarsesion(){
+    <?php
+  session_destroy();
+  
+?>
+}
+
           </script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         <!-- Icono Buscador -->
-        <button class="botonbuscador"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" fill="white" class="bi bi-search" viewBox="0 0 16 16">
+        <button id="" class="botonbuscador"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" fill="white" class="bi bi-search" viewBox="0 0 16 16">
             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
         </svg></button>
 
@@ -108,18 +142,20 @@
         </svg></button>
 
          <!-- Iniciar Sesion -->
-         <button class="btn btn-secondary">
+          <button id="inicio" class="btn btn-secondary">
           <a style="color:white"; href="iniciar_sesion.php">Iniciar sesión</a>
         </button>
 
          <!-- Registro -->
-         <button  class="btn btn-secondary">
+          <button id="registro" class="btn btn-secondary">
           <a style="color:white"; href="registro.php">Registrar</a>
         </button>
       
-        
+              
 </header>
+
 <body>
+
     <br><br>
     <div><h2><center>Presentacion de servicios de la página</center></h2></div>
 
@@ -178,7 +214,12 @@
 <footer class="footer">
     <!-- Grid container -->
     <div class="container p-4">
-      
+
+
+    <button onclick="cerrarsesion()">Cerrar Sesion</button>
+
+
+
       <!-- Section: Form -->
       <section class="">
         <form action="">
@@ -204,8 +245,8 @@
             <!--Grid column-->
             <div class="col-auto">
               <!-- Submit button -->
-              <button type="submit" class="btn btn-outline-light mb-4">
-                Subscribir
+              <button id="submit" onclick="submitForm()" class="btn btn-outline-light mb-4">
+                Submit
               </button>
             </div>
             <!--Grid column-->
@@ -232,6 +273,7 @@
       <p>Bienvenido <?php echo  $_SESSION['username']; ?></p>
  
     </div>
+
     <!-- Copyright -->
   </footer>
 
