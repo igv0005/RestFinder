@@ -42,54 +42,10 @@
     <a title="RestFinder" href="index.php"><img src="image.png" alt="Logo" /></a>
 
     <!-- Buscador -->
-    <input type="text" value="" id="search" onchange="openPage()" class="imput text-white" placeholder=" Buscar restaurantes">
-
+    <input type="text" value="" id="search" onchange="openPage()" class="imput text-white" placeholder=" Buscar restaurantes" >
+        <script src="buscador.js"></script>
+        
     <script>
-      function openPage() {
-        var x = document.getElementById("search").value;
-
-        if (x === "piamontesa") {
-          window.open("mesapia.html");
-          window.close();
-        }
-
-        if (x === "distopia") {
-          window.open("mesadistopia.html");
-        }
-
-        if (x === "serenata") {
-          window.open("mesasere.html");
-        }
-
-        if (x === "living room") {
-          window.open("mesaliving.html");
-        }
-
-        if (x === "raimunda") {
-          window.open("mesaraimunda.html");
-        }
-
-        if (x === "dragon khan") {
-          window.open("mesadragon.html");
-        }
-
-        if (x === "rincon") {
-          window.open("mesarincon.html");
-        }
-
-        if (x === "masia") {
-          window.open("mesamasia.html");
-        } else {
-
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Parece que este restaurante no existe',
-            confirmButtonColor: '#f05168'
-          })
-
-        }
-      }
 
 
       function submitForm() {

@@ -86,7 +86,8 @@
         <a title="RestFinder" href="index.php"><img src="image.png" alt="Logo" /></a>
 
         <!-- Buscador -->
-        <input type="text" class="imput text-white" placeholder=" Buscar restaurantes" >
+        <input type="text" value="" id="search" onchange="openPage()" class="imput text-white" placeholder=" Buscar restaurantes" >
+        <script src="buscador.js"></script>
 
         <!-- Icono Buscador -->
         <button class="botonbuscador"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" fill="white" class="bi bi-search" viewBox="0 0 16 16">
@@ -110,12 +111,12 @@
 
          <!-- Iniciar Sesion -->
          <button class="btn btn-secondary">
-          <a style="color:white"; href="iniciar_sesion.html">Iniciar sesión</a>
+          <a style="color:white"; href="iniciar_sesion.php">Iniciar sesión</a>
         </button>
 
          <!-- Registro -->
          <button  class="btn btn-secondary">
-          <a style="color:white"; href="registro.html">Registrar</a>
+          <a style="color:white"; href="registro.php">Registrar</a>
         </button>
       
         
@@ -133,13 +134,13 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-outline-secondary"><a href="mesapia.html" style="color: black;">RESERVA</a></button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary"><a style="color: black;">Edit</a></button>
                   </div> 
                   <small class="text-muted">9 mins</small>
                 </div>
               </div>
             </div>
           </div>
+
           <div class="col">
             <div class="card shadow-sm">
               <img class="card-img-top" src="img/r2.png">
@@ -147,8 +148,7 @@
                 <p class="card-text">La serenata anteriormente era un bar especializado en cócteles, pero se actualizaron para brindar un servicio más amplio y de calidad.</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary"> <a href="mesasere.html" style="color: black;">RESERVA</button>    
-                    <button type="button" class="btn btn-sm btn-outline-secondary"><a style="color: black;"></a>Edit</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary"> <a href="mesasere.html" style="color: black;">RESERVA</a></button>
                   </div>
                   <small class="text-muted">9 mins</small>
                 </div>
@@ -156,6 +156,7 @@
             </div>
           </div>
   
+
           <div class="col">
             <div class="card shadow-sm">
               <img class="card-img-top" src="img/r3.png">
@@ -163,14 +164,15 @@
                 <p class="card-text">Living Room es un espacio idílico para compartir con compañeros y amigos en el que la buena comida está acompañada de la mejor música en directo.</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="mesaliving.html" style="color: black;">RESERVA</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary"><a style="color: black;"></a>Edit</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="mesaliving.html" style="color: black;">RESERVA</a></button>
                   </div>
                   <small class="text-muted">9 mins</small>
                 </div>
               </div>
             </div>
           </div>
+
+
           <div class="col">
             <div class="card shadow-sm">
               <img class="card-img-top" src="img/r4.png">
@@ -178,14 +180,15 @@
                 <p class="card-text">Distopía resalta la comida tradicional con las técnicas más actuales de la cocina moderna.</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="mesadistopia.html" style="color: black;" >RESERVA</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary"><a style="color: black;"></a>Edit</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="mesadistopia.html" style="color: black;" >RESERVA</a></button>
                   </div>
                   <small class="text-muted">9 mins</small>
                 </div>
               </div>
             </div>
           </div>
+
+
           <div class="col">
             <div class="card shadow-sm">
               <img class="card-img-top" src="img/r5.png">
@@ -193,8 +196,7 @@
                 <p class="card-text">Raimunda da a sus clientes la posibilidad de adentrarse en la naturaleza y probar un bocado de la misma, con la comida más fresca posible.</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="mesaraimunda.html" style="color: black;">RESERVA</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary"><a style="color: black;"></a>Edit</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="mesaraimunda.html" style="color: black;">RESERVA</a></button>
                   </div>
                   <small class="text-muted">9 mins</small>
                 </div>
@@ -202,6 +204,7 @@
             </div>
           </div>
   
+
           <div class="col">
             <div class="card shadow-sm">
               <img class="card-img-top" src="img/r6.png">
@@ -209,14 +212,15 @@
                 <p class="card-text">Dragon Khan nos facilita un viaje a la lejana China para conocer su gastronomía en su punto más álgido.</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="mesadragon.html" style="color: black;">RESERVA</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary"><a style="color: black;"></a>Edit</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="mesadragon.html" style="color: black;">RESERVA</a></button>
                   </div>
                   <small class="text-muted">9 mins</small>
                 </div>
               </div>
             </div>
           </div>
+
+
           <div class="col">
             <div class="card shadow-sm">
               <img class="card-img-top" src="img/r7.png">
@@ -224,14 +228,15 @@
                 <p class="card-text">El rincón nos relata visualmente como sería un sitio idílico en el que degustar buena comida a la vez que disfrutas de un lugar acogedor.</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="mesarincon.html" style="color: black;">RESERVA</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary"><a style="color: black;"></a>Edit</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="mesarincon.html" style="color: black;">RESERVA</a></button>
                   </div>
                   <small class="text-muted">9 mins</small>
                 </div>
               </div>
             </div>
           </div>
+
+
           <div class="col">
             <div class="card shadow-sm">
               <img class="card-img-top" src="img/r8.png">
@@ -241,7 +246,6 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-outline-secondary"><a href="mesamasia.html" style="color: black;">RESERVA</a></button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary"><a style="color: black;"></a>Edit</button>
                   </div>
                   <small class="text-muted">9 mins</small>
                 </div>

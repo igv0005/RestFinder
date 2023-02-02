@@ -12,7 +12,7 @@
     <div class="signupFrm">
   
         <form action="conexion.php" method="post" class="form">
-        <a href="index.html">
+        <a href="index.php">
         <button type="button" class="submitBtn">Atras</button>
         </a>
           <h1 class="title">Registro</h1>

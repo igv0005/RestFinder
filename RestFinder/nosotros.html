@@ -10,7 +10,28 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-</head>
+
+    <style>
+
+      .slider {
+      width: 600px;
+      height: 220px;
+      overflow: hidden;
+      }
+  
+      .slider img {
+      width: 600px;
+      height: 220px;
+      display: none;
+      }
+  
+      .slider img.active {
+      display: block;
+      }
+  
+  
+      </style>
+  </head>
 
 <header class="header">
   <form>
@@ -32,8 +53,8 @@
       <a title="RestFinder" href="index.php"><img src="image.png" alt="Logo" /></a>
 
       <!-- Buscador -->
-      <input type="text" class="imput text-white" placeholder=" Buscar restaurantes" >
-
+      <input type="text" value="" id="search" onchange="openPage()" class="imput text-white" placeholder=" Buscar restaurantes" >
+        <script src="buscador.js"></script>
       <!-- Icono Buscador -->
       <button class="botonbuscador"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" fill="white" class="bi bi-search" viewBox="0 0 16 16">
           <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
@@ -56,12 +77,12 @@
 
        <!-- Iniciar Sesion -->
        <button class="btn btn-secondary">
-        <a style="color:white"; href="iniciar_sesion.html">Iniciar sesión</a>
+        <a style="color:white"; href="iniciar_sesion.php">Iniciar sesión</a>
       </button>
 
        <!-- Registro -->
        <button  class="btn btn-secondary">
-        <a style="color:white"; href="registro.html">Registrar</a>
+        <a style="color:white"; href="registro.php">Registrar</a>
       </button>
     
       
@@ -78,7 +99,18 @@
       RestFinder es la app líder de reservas online de restaurantes en Europa y Murcia. Fundada en 2022, ha revolucionado y digitalizado el sector de la restauración, poniendo en contacto a restaurantes y clientes.
     </h5>
 <br>
-<br><br><br><br><br><br><br>
+
+<center><div class="slider">
+  <img src="comida1.png" alt="Slide 1">
+  <img src="comida2.png" alt="Slide 2">
+  <img src="comida3.png" alt="Slide 3">
+  <img src="comida4.png" alt="Slide 4">
+</div></center>
+
+<script src="slider.js"></script>
+
+<br>
+
     <body>
     <!-- Footer -->
     <footer class="footer">
